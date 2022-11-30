@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
-    "dev": "nodemon ./src/index.ts"
+    "start": "nodemon ./src/index.ts"
   },
   "dependencies": {
     "express": "^4.17.1",
