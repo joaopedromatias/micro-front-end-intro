@@ -1,8 +1,14 @@
 import express from "express";
 import productsRouter from './router/products'
+import cors from 'cors'
 
 const app = express();
 const port = 3002;
+
+app.use(cors({ 
+  origin: '*'
+}))
+
 
 app.use(express.json()); 
 

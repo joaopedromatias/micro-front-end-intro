@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import "./index.css";
+import "./styles/index.css";
+import Header from "./components/Header";
+import Home from './components/Home'
 
 const App = () => (
   <div className="container">
-    <div>Name: home</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
+    <Header />
+    <Home />
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

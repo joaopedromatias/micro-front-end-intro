@@ -8,7 +8,6 @@ export const getAllProducts = (req: Request, res: Response) => {
 export const getProduct = (req: Request, res: Response) => { 
 
     const { id } = req.params
-
     const product = data.find(product => product.id === Number(id))
 
     if (product) { 
