@@ -50,6 +50,7 @@ module.exports = {
         "./Header": './src/components/Header',
         "./getProduct": "./src/utils/fetchProduct",
         "./Button": "./src/components/Button",
+        './HomeContent': './src/components/HomeContent'
       },
       shared: {
         ...deps,

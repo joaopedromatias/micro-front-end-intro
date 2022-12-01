@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import fetchAllProducts from '../utils/fetchAllProducts'
-import Button from './Button';
 import ProductCard from './ProductCard';
+import Header from './Header';
+import HomeHolder from './HomeHolder';
 
 export default function HomeContent () { 
 
     const [products, setProducts] = useState<Products[] | undefined>(undefined);
-    const [buttonVisible, setButtonVisible] = useState<boolean>(false);
 
     useEffect(() => { 
         const response = fetchAllProducts();
         response.then(({ data }) => setProducts(data));
     }, [])
 
-    return <Wrapper>
-        <div className="grid">
-            {Array.isArray(products) ? products.map(product => {
-                return <ProductCard {...product} />
-            }): <></>}
-        </div>
-    </Wrapper>
+    return <>
+    <Header />
+        <HomeHolder>
+            <Wrapper>
+                <div className="grid">
+                    {Array.isArray(products) ? products.map(product => {
+                        return <ProductCard {...product} />
+                    }): <></>}
+                </div>
+            </Wrapper>
+        </HomeHolder>
+        </>
 }
 
 const Wrapper = styled.div`

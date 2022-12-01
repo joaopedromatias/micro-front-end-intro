@@ -49,6 +49,7 @@ module.exports = {
       exposes: {
         './CartIcon': './src/components/CartIcon',
         './cart': './src/cart',
+        './CartContent': './src/components/CartContent'
       },
       shared: {
         ...deps,
