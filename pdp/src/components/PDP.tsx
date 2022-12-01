@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import getProduct from 'home/getProduct'
+import { useParams } from 'react-router-dom'
 
 export default function PDP () { 
 
     const [product, setProduct] = useState<any>({} as any)
 
+    const { id } = useParams();
+
     useEffect(() => { 
-        const res = getProduct(1);
-        res.then(({data}) => {console.log(data); setProduct(data)})
+        const res = getProduct(id);
+        res.then(({data}) => setProduct(data))
     }, [])
 
     return <Wrapper>
@@ -49,9 +52,11 @@ margin-top: 50px;
             #title { 
                 font-family: cursive;
                 font-size: 2rem;
+                margin-bottom: 5px;
             }
             #price { 
                 letter-spacing: 0.8px;
+                margin-bottom: 5px;
             }
         }
         .line { 
