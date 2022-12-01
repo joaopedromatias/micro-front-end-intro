@@ -17,9 +17,9 @@ color: white;
 letter-spacing: 4px;
 text-transform: capitalize;
 span { 
-    display: inline-block;
+    display: inline;
     height: 85px;
     font-size: 1.2rem;
-    transform: translateY(30px);
+    line-height: 85px;
 }
 `

@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import fetchData from '../utils/fetch'
+import fetchAllProducts from '../utils/fetchAllProducts'
+import Button from './Button';
+import ProductCard from './ProductCard';
 
-export default function () { 
+export default function HomeContent () { 
 
     const [products, setProducts] = useState<Products[] | undefined>(undefined);
+    const [buttonVisible, setButtonVisible] = useState<boolean>(false);
 
     useEffect(() => { 
-        const response = fetchData('http://localhost', 3002, '/api/products');
+        const response = fetchAllProducts();
         response.then(({ data }) => setProducts(data));
     }, [])
 
     return <Wrapper>
         <div className="grid">
             {Array.isArray(products) ? products.map(product => {
-                return <div className='product-card'>
-                    <h4>{product.name}</h4>
-                    <img src={product.image_url} alt={product.name} />
-                    <p>$ {product.price}</p>
-                </div>
+                return <ProductCard {...product} />
             }): <></>}
         </div>
     </Wrapper>
 }
 
 const Wrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
 div.grid { 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -38,12 +33,21 @@ div.grid {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 40px;
-        border: 0.5px solid lightgray;
+        gap: 25px;
+        border: 1px solid lightgray;
         border-radius: 10px;
         margin-bottom: 15px;
         img { 
             width: 320px;
+            aspect-ratio: 16/11;
+        }
+        #price { 
+            margin-top: 0px;
+            font-size: 1.1rem;
+        }
+        &:hover {
+            box-shadow: 1px 2px 3px darkgray;
+            cursor: pointer;
         }
     }
 }

@@ -44,7 +44,11 @@ module.exports = {
       name: "home",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Header": './src/components/Header',
+        "./getProduct": "./src/utils/fetchProduct",
+        "./productType": "./src/types.d.ts",
+      },
       shared: {
         ...deps,
         react: {

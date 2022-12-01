@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import Header from "home/Header";
 import "./index.css";
+import PDP from './components/PDP'
 
 const App = () => (
   <div className="container">
-    <div>Name: pdp</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
+    <Header />
+    <PDP />
   </div>
 );
+
 ReactDOM.render(<App />, document.getElementById("app"));

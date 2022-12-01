@@ -2,12 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
 import Header from "./components/Header";
-import Home from './components/Home'
+import HomeHolder from "./components/HomeHolder";
+import Home from './components/HomeContent'
 
 const App = () => (
   <div className="container">
     <Header />
-    <Home />
+    <HomeHolder>
+      <Home />
+    </HomeHolder>
   </div>
 );
+
 ReactDOM.render(<App />, document.getElementById("app"));
