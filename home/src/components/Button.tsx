@@ -5,7 +5,7 @@ interface Props {
     type: 'primary' | 'secondary'
     text: string
     visible: boolean
-    onClick?: () => void
+    onClick?: (MouseEvent) => void
     style?: object
 }
 

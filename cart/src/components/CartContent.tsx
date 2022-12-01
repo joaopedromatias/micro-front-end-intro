@@ -49,8 +49,8 @@ export default function CartContent () {
             </>
         })}
         <div className='cart-bottom'>
-            <Button onClick={clearCart} text='clear cart' visible={true}>clear cart</Button>
-            <div id='total'>{cartPrice ? <>Total: <strong>{`$`+cartPrice.toFixed(2)}</strong> </>: <></>}</div>
+            <div><Button onClick={clearCart} text='clear cart' visible={true}>clear cart</Button></div>
+            <div id='total'>{cartPrice ? <div>Total: <strong>{`$`+cartPrice.toFixed(2)}</strong> </div>: <></>}</div>
         </div>
         </>
         :
@@ -64,7 +64,7 @@ const Wrapper = styled.div`
 padding-top: 10px;
 max-width: 60%;
 margin: auto;
-margin-top: 50px;
+margin-top: 30px;
 text-align: center;
 hr { 
     
@@ -94,7 +94,7 @@ hr {
         width: 60px;
     }
     #name { 
-        width: 100px;
+        width: 150px;
     }
 }
 .cart-bottom { 

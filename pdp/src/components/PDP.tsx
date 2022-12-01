@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import getProduct from 'home/getProduct'
 import { useParams } from 'react-router-dom'
+import Header from 'home/Header'
 import Rate from './Rate'
 import Button from 'home/Button'
 import { addToCart } from 'cart/cart'
@@ -17,7 +18,9 @@ export default function PDP () {
         res.then(({data}) => setProduct(data))
     }, [])
 
-    return <Wrapper>
+    return <>
+    <Header />
+    <Wrapper>
         <div className='grid'>
             <div id='image'>
                 <img src={product.image_url} alt={product.name} />
@@ -36,6 +39,7 @@ export default function PDP () {
             </div>
         </div>
     </Wrapper>
+    </>
 }
 
 const Wrapper = styled.div`

@@ -3,6 +3,7 @@ import { cartState } from '../cart';
 import { ProductCart } from './CartContent';
 import Cart from '../icons/Cart'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export default function CartIcon () { 
 
@@ -16,7 +17,9 @@ export default function CartIcon () {
     }, []);
 
     return <Wrapper>
-        <Cart />
+        <Link to='/cart'>
+            <Cart />
+        </Link>
         <span id='amount'>
             {cart ? <div>{cart.length}</div> : <></>}
         </span>

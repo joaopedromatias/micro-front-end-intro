@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import CartIcon from 'cart/CartIcon'
+import { Link }from 'react-router-dom'
 
 export default function () { 
     return <Wrapper>
-        <span>Micro Front End</span>         
+        <Link to='/' style={{textDecoration: 'none', color: 'white'}}><span>Micro Front End</span></Link>         
         <div className='holder'>
             <CartIcon />
         </div>

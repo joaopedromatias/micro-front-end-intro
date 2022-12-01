@@ -75,6 +75,6 @@ In React a good way to get around this is by using the **`Error Boundary`** comp
 
 ***State Management***
 
-A To do a state management on Micro Front Ends it is important to use reactive libraries, like **`rxjs`**
+To do a state management on Micro Front Ends it is important to use reactive JS libraries, like **`rxjs`**. This allows to update a component state when some action occurs, like updating the cart object.
 
 **Reference**: https://www.youtube.com/watch?v=lKKsjpH09dU&t=107s 

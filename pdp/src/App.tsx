@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 const App = () => (
   <Router>
-      <Header />
       <Routes>
         <Route path="/product/:id" element={<PDP />}/>
       </Routes>
