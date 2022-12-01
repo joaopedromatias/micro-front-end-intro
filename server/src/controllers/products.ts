@@ -15,3 +15,11 @@ export const getProduct = (req: Request, res: Response) => {
     } 
     return res.status(404).json({sucess: false, message: 'product not found' })
 }
+
+export const addToCart = (req: Request, res: Response) => { 
+    
+    // executa a lógica
+
+    res.status(201).send('');
+
+}
