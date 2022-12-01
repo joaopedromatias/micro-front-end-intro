@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button';
+import { addToCart } from 'cart/cart'
 
 export default function ProductCard ({ name, price, image_url, id}) { 
     const [buttonVisible, setButtonVisible] = useState<boolean>(false);
@@ -10,7 +11,7 @@ export default function ProductCard ({ name, price, image_url, id}) {
             <h3 id='title'>{name}</h3>
             <img src={image_url} alt={name} />
             <span id='price'><strong>$ {price}</strong></span>
-            <Button type='primary' text='add to cart' visible={buttonVisible}></Button>
+            <Button onClick={() => addToCart(id)} type='primary' text='add to cart' visible={buttonVisible}></Button>
         </div>
     </Wrapper>
 }

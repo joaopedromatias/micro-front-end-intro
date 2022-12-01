@@ -1,12 +1,18 @@
 # Micro Front End
 
-## What Is?
+This project is a Micro Front End study. 
 
-**Micro Front End** allows each team to work on their own codebase for inside of a given project. It allows components and functionalities sharing between those codebases and teams. For example: checkout page and product page have different codebases and teams, but both can consume codes (like components) from the homepage.
+It joins components and funcionalities from 3 different applications: `home`, `pdp` and `cart` onto one single application `app`. 
+
+The data is delivered by the `server` backend application.
+
+<hr />
+
+**Micro Front End** allows each team to work on their own codebase for inside of a given project. It allows components and functionalities to be sahred among those codebases. For example: checkout page and product page have different codebases and teams, but both can consume codes (like components) from the homepage.
 
 Micro Front End can be used on the majority of frameworks (React, Vue, Angular, Svelte).
 
-One of the most advantages of micro front ends is that it makes possible for each team have its deploy cycle. Moreover, it provides more organization in the codebase and in the repository management. 
+One of the most advantages of micro front ends is that it makes possible for each team have its deploy cycle. Moreover, it provides more organization for the codebase and for the repository management.
 
 👉 https://micro-frontends.org/
 
@@ -59,7 +65,7 @@ const SomeComponent = () => (
 
 ***Async Importing***
 
-The shared components can be imported asynchronously, by using React.lazy() and Suspense.
+The shared components can be imported asynchronously, by using **`React.lazy()`** and **`Suspense`**.
 
 ***Error Handling***
 
@@ -67,8 +73,8 @@ Since using MF makes our code depends on external resources, it is important to 
 
 In React a good way to get around this is by using the **`Error Boundary`** component.
 
-***Share Application State***
+***State Management***
 
-In the header example above, the home application is the remote, while the pdp application is the host.
+A To do a state management on Micro Front Ends it is important to use reactive libraries, like **`rxjs`**
 
-  
+**Reference**: https://www.youtube.com/watch?v=lKKsjpH09dU&t=107s 

@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import CartIcon from 'cart/CartIcon'
 
 export default function () { 
     return <Wrapper>
-        <span>Micro Front End</span>        
+        <span>Micro Front End</span>         
+        <div className='holder'>
+            <CartIcon />
+        </div>
     </Wrapper>
 }
 
@@ -21,5 +25,11 @@ span {
     height: 85px;
     font-size: 1.2rem;
     line-height: 85px;
+}
+.holder { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
 }
 `

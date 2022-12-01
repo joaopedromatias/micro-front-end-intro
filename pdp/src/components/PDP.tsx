@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import getProduct from 'home/getProduct'
 import { useParams } from 'react-router-dom'
+import Rate from './Rate'
+import Button from 'home/Button'
 
 export default function PDP () { 
 
@@ -21,11 +23,15 @@ export default function PDP () {
             </div>
             <div className='product-info'>
                 <div className='flex'>
-                    <h2 id='title'>{product.name}</h2>
+                    <div className='flex-v'>
+                        <h2 id='title'>{product.name}</h2>
+                        <Rate />
+                    </div>
                     <h3 id='price'>$ {product.price}</h3>
                 </div>
                 <hr className='line'/>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fuga beatae doloremque itaque dolorum cum deserunt! Minus, cupiditate numquam illo atque aspernatur veniam, repellat architecto veritatis pariatur cumque placeat necessitatibus!</p>
+                <Button text='add to cart' visible={true} type='primary'/>
             </div>
         </div>
     </Wrapper>
@@ -33,7 +39,7 @@ export default function PDP () {
 
 const Wrapper = styled.div`
 margin: 0 15vw;
-margin-top: 50px;
+margin-top: 110px;
 .grid { 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,6 +48,8 @@ margin-top: 50px;
         img { 
             height: 300px;
             aspect-ratio: 16/9;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px lightgray;
         }
     }
     .product-info {
@@ -49,10 +57,16 @@ margin-top: 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            #title { 
-                font-family: cursive;
-                font-size: 2rem;
-                margin-bottom: 5px;
+            flex-direction: row;
+            .flex-v { 
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                #title { 
+                    font-family: cursive;
+                    font-size: 2rem;
+                    margin-bottom: 5px;
+                }
             }
             #price { 
                 letter-spacing: 0.8px;
@@ -64,6 +78,9 @@ margin-top: 50px;
             border: lightgray 0.5px solid;
             margin-top: 0;
             margin-bottom: 40px;
+        }
+        p { 
+            margin-bottom: 25px;
         }
     }
     }
