@@ -1,0 +1,11 @@
+{
+  "name": "micro-front-ends-intro",
+  "version": "1.0.0",
+  "description": "This project is a Micro Front End study.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd app && npm start"
+  },
+  "author": "joaopedromatias",
+  "license": "ISC"
+}
