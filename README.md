@@ -8,6 +8,10 @@ The data is delivered by the `server` backend application.
 
 <hr />
 
+### 📺 Demonstration
+
+https://user-images.githubusercontent.com/90068133/205182648-a3c5f4f5-19e7-48af-b14c-e8da41b18b94.mp4 
+
 **Micro Front End** allows each team to work on their own codebase for a given project. It allows components and functionalities to be sahred among those codebases. For example: checkout page and product page have different codebases and teams, but both can consume JavaScript code (like a component) from the homepage.
 
 Micro Front End can be used on the majority of frameworks (React, Vue, Angular, Svelte), where each application can use what fits best.
