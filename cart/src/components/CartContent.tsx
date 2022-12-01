@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { cartState } from '../cart'
+import { cartState, clearCart } from '../cart'
 import styled from 'styled-components'
 import Header from 'home/Header'
 import Button from 'home/Button'
@@ -37,7 +37,8 @@ export default function CartContent () {
     return <>
         <Header />
         <Wrapper>{ cart && cart.length > 0 ?
-        cart.map((product, index) => {
+        <>
+        {cart.map((product, index) => {
             return <><div className='product-cart' key={index}>
                 <img src={product.image_url} alt={product.name} />
                 <p id='name'>{product.name}</p>
@@ -46,15 +47,15 @@ export default function CartContent () {
             </div>
             <hr />
             </>
-        })
-        :
-        <div id='empty'>Your cart is empty</div>
-        }
+        })}
         <div className='cart-bottom'>
-            <Button text='clear cart' visible={true}>clear cart</Button>
+            <Button onClick={clearCart} text='clear cart' visible={true}>clear cart</Button>
             <div id='total'>{cartPrice ? <>Total: <strong>{`$`+cartPrice.toFixed(2)}</strong> </>: <></>}</div>
         </div>
-        
+        </>
+        :
+        <div id='empty'>Your cart is empty</div>
+        }       
         </Wrapper>
     </>
 }
@@ -64,10 +65,13 @@ padding-top: 10px;
 max-width: 60%;
 margin: auto;
 margin-top: 50px;
+text-align: center;
 hr { 
+    
     border: .5px solid lightgray;
 }
 #empty { 
+    margin-left: 10px;
     letter-spacing: 0.9px;
 }
 .product-cart { 

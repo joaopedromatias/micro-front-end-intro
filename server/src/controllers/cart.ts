@@ -30,3 +30,8 @@ export function addToCart (req: Request, res: Response) {
 
     return res.status(404).json({ sucess: false });
 }
+
+export function clearCart (req: Request, res: Response) { 
+    cart = [];
+    return res.status(200).json({ sucess: true });
+}
